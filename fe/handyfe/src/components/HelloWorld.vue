@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: 'HelloWorld',
   data() {
@@ -27,10 +28,17 @@ export default {
       // `this` inside methods points to the current active instance
       // `event` is the native DOM event
       if (event) {
-        alert(this.username + this.password)
+        //alert(this.username + this.password)
+        axios.get("http://192.168.2.38:5000/login")
+        .then((response) => {
+          alert(response.data.firstName);
+        })
       }
-      
+
+
     }
+
+      
   }
 }
 </script>
