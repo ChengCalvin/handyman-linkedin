@@ -29,9 +29,16 @@ export default {
       // `event` is the native DOM event
       if (event) {
         //alert(this.username + this.password)
-        axios.get("http://192.168.2.38:5000/login")
+        axios.post("http://192.168.2.38:5000/create-account", {
+          email: this.username,
+          password: this.password
+        })
         .then((response) => {
-          alert(response.data.firstName);
+          if(response.status === 200) {
+            alert("Account created");
+          } else {
+            alert("Something went wrong");
+          }
         })
       }
 
