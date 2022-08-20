@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <img alt="Vue logo" src="./assets/logo.png" width="100" height="100" />
   <HelloWorld msg="Handyman App"/>
 </template>
 

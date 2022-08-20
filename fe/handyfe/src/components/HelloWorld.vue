@@ -1,16 +1,36 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button>Create Account</button>
+    <button @click="createAccount">Create Account</button>
     <button>Log in</button>
+    <form>
+      <input v-model="username" placeholder="Username"/>
+      <input v-model="password" placeholder="Password" type="password"/>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  data() {
+    return {
+      username: '',
+      password: '',
+    }
+  },
   props: {
     msg: String
+  },
+  methods: {
+    createAccount(event) {
+      // `this` inside methods points to the current active instance
+      // `event` is the native DOM event
+      if (event) {
+        alert(this.username + this.password)
+      }
+      
+    }
   }
 }
 </script>
@@ -32,6 +52,10 @@ a {
   color: #42b983;
 }
 button {
+  padding: 5px;
+  margin: 5px;
+}
+input {
   padding: 5px;
   margin: 5px;
 }
