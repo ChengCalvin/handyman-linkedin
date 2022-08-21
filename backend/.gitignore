@@ -1,0 +1,12 @@
+# created by virtualenv automatically
+init_db.py
+
+.env
+
+/Scripts
+
+__pycache__
+
+pyvenv.cfg
+
+/Lib
